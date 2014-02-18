@@ -1,5 +1,6 @@
 package es.uniovi.asw.observaTerra;
 
+import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
@@ -16,5 +17,13 @@ public class ObservationList {
 			sum += d;
 		}
 		return sum / obsMap.size() ;
+	}
+	
+	public String show() {
+		StringBuilder sb = new StringBuilder();
+		for(Map.Entry<Country,Double> entry : obsMap.entrySet()) {		
+			sb.append(entry.getKey().getName() + " -> " + entry.getValue() + "\n");
+		}
+		return sb.toString();
 	}
 }
