@@ -1,4 +1,4 @@
-package es.uniovi.asw.observaTerra.cucumber;
+package es.uniovi.asw.observaTerra;
 
 import java.util.List;
 
