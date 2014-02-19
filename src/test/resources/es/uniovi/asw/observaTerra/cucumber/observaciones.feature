@@ -11,5 +11,5 @@ Escenario: Calcular media de observaciones
       | Italy   | 4,2   |
       | Chile   | 1     |
     Cuando calculo la nota media
-    Entonces obtengo el valor 23
+    Entonces obtengo el valor 2
     
