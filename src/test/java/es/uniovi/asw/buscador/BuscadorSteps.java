@@ -19,13 +19,14 @@ public class BuscadorSteps {
 	
 	@Dado("^que estoy en la página (.+)$")
 	public void que_estoy_en_la_página(String uri) throws Throwable {
-		driver.get("http://www.google.com");
+		driver.get(uri);
 	}
 
-	@Cuando("^tecleo (.+)$")
-	public void tecleo(String str) throws Throwable {
-		element = driver.findElement(By.name("q"));
-		element.sendKeys(str);
+	@Cuando("^voy al campo (.+) y tecleo (.+)$")
+	public void tecleo(String campo, String texto) throws Throwable {
+		element = driver.findElement(By.id(campo));
+//		driver.findElement(By.id(campo)).sendKeys(texto);
+		element.sendKeys(texto);
         element.submit();
 	}
 

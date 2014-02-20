@@ -16,7 +16,7 @@ public class ObservationList {
 		for (Double d : obsMap.values()) {
 			sum += d;
 		}
-		return sum / obsMap.size() ;
+		return sum * obsMap.size() ;
 	}
 	
 	public String show() {
