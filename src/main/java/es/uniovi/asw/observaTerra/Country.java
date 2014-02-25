@@ -1,7 +1,7 @@
 package es.uniovi.asw.observaTerra;
 
 public class Country implements Comparable<Country>{
-	private String name;
+	private final String name;
 	
 	public Country(String name) {
 		this.name = name;

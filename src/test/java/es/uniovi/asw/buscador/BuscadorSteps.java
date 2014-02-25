@@ -31,7 +31,7 @@ public class BuscadorSteps {
 	}
 
 	@Entonces("^obtengo una página que contiene (.+)$")
-	public void obtengo_resultados_con_el_texto(String txt) throws Throwable {
+	public void obtengo_resultados_con_el_texto(final String txt) throws Throwable {
 		assertTrue("Page must contain " + txt, driver.getPageSource().contains(txt));
 	}
 }
