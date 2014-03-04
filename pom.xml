@@ -132,19 +132,6 @@
 									<ignore />
 								</action>
 							</pluginExecution>
-							<pluginExecution>
-								<pluginExecutionFilter>
-									<groupId>org.jbehave</groupId>
-									<artifactId>jbehave-maven-plugin</artifactId>
-									<versionRange>[${jbehave.core.version},)</versionRange>
-									<goals>
-										<goal>unpack-view-resources</goal>
-									</goals>
-								</pluginExecutionFilter>
-								<action>
-									<ignore />
-								</action>
-							</pluginExecution>
 						</pluginExecutions>
 					</lifecycleMappingMetadata>
 				</configuration>
