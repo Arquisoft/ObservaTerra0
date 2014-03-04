@@ -15,9 +15,10 @@ public class ObservacionesSteps {
 	private Double media;
 
 	@Dada("^una lista de observaciones:$")
-	public void una_lista_de_observaciones(List<Observation> observations) throws Throwable {
-		for (Observation o : observations) {
-            observationList.addObservation(new Country(o.country), o.value);
+	public void una_lista_de_observaciones(final List<Observation> observations) 
+			throws Throwable {
+		for (final Observation obs : observations) {
+            observationList.addObservation(new Country(obs.country), obs.value);
         }
 	}
 
