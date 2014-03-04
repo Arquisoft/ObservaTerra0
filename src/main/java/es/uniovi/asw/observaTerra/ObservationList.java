@@ -19,6 +19,10 @@ public class ObservationList {
 		return sum / obsMap.size() ;
 	}
 	
+	public int length() {
+		return obsMap.size() ;
+	}
+
 	public String show() {
 		StringBuilder sb = new StringBuilder();
 		for(Map.Entry<Country,Double> entry : obsMap.entrySet()) {		
