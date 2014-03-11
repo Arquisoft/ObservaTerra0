@@ -1,6 +1,7 @@
 package es.uniovi.asw.observaTerra;
 
 import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.*;
 
 import java.io.InputStream;
 
@@ -29,12 +30,12 @@ public void leo_las_observaciones() throws Throwable {
 
 @Entonces("^el número de observaciones es (\\d+)$")
 public void el_número_de_observaciones_es(int expected) throws Throwable {
-    assertEquals(obsList.length(),expected);   
+    assertThat(obsList.length()).isEqualTo(expected);
 }
 
 @Entonces("^el valor medio es (.+)$")
 public void el_valor_medio_es_(Double expected) throws Throwable {
-	assertEquals(obsList.average(),expected,0.001);
+	assertThat(obsList.average()).isEqualTo(expected,offset(0.001));
 }
 
 }
