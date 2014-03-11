@@ -11,13 +11,14 @@ import static org.junit.Assert.assertEquals;
 
 public class ObservacionesSteps {
 
-	private final ObservationList observationList = new ObservationList();
+	private ObservationList observationList; 
 	private Double media;
 
 	@Dada("^una lista de observaciones:$")
 	public void una_lista_de_observaciones(final List<Observation> observations) 
 			throws Throwable {
-		for (final Observation obs : observations) {
+		observationList = new ObservationList();
+		for (Observation obs : observations) {
             observationList.addObservation(new Country(obs.country), obs.value);
         }
 	}
@@ -27,9 +28,15 @@ public class ObservacionesSteps {
 		media = observationList.average();
 	}
 
-	@Entonces("^obtengo el valor (.+)$") // (\\d\\.+\\d+)$")
+	@Entonces("^obtengo el valor (.+)$") 
 	public void obtengo_el_valor(Double expected) throws Throwable {
 		assertEquals(expected,media,0.001);
+	}
+
+	@Dada("^una observación de (.+) con valor (.+)$")
+	public void una_observación_(String nombre, Double valor) throws Throwable {
+		observationList = new ObservationList();
+		observationList.addObservation(new Country(nombre), valor);
 	}
 
 	// Esta clase se utiliza solamente para la conversión entre
